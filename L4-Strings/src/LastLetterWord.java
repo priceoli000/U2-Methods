@@ -1,4 +1,13 @@
+import javax.swing.*;
+
 public class LastLetterWord {
+
+    // 1. Get input : three words input
+    // 2. Isolate last 3 letters of any word
+    // 3. Combine #2 of all three words
+
+
+
 
     /*
     Create a program that takes the last 3 letters of each String
@@ -11,8 +20,27 @@ public class LastLetterWord {
 
     public static void main(String[] args) {
 
+        String word1 = JOptionPane.showInputDialog("Enter Word 1: ");
+        String word2 = JOptionPane.showInputDialog("Enter Word 2: ");
+        String word3 = JOptionPane.showInputDialog("Enter Word 3: ");
 
+        String output = lastThree(word1) + lastThree(word2) + lastThree(word3);
+
+        JOptionPane.showMessageDialog(null, output);
+
+        System.exit(0);
 
     }
+    public static String lastThree(String word){
 
+        String newWord;
+
+        if(word.length() <=3){
+            newWord = word;
+        }else{
+            newWord = word.substring(word.length()-3);
+        }
+
+      return newWord;
+    }
 }
